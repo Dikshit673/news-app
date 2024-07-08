@@ -18,7 +18,7 @@ const FavNewsPaginationCom = () => {
     (state) => state
   );
 
-  console.log(favNewsObj1);
+  // console.log(favNewsObj1);
 
   const { myFavouriteNews, favTotalPage, favCurrentPage, favPageSize, favSiblings } = favNewsObj
   // console.log(myArrayRange);

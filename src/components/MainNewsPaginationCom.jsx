@@ -9,6 +9,9 @@ const MainNewsPaginationCom = () => {
     const apiData = useSelector((state) => state.apiData);
     const pageDetail = useSelector((state) => state.pageDetail);
 
+    const pageDetails = useSelector((state) => state);
+    console.log(pageDetails)
+
     useEffect(() => {
         let myresults = (apiData.myNewsApiData?.totalResults ? (Math.ceil(apiData.myNewsApiData.totalResults / pageDetail.myPageSize)) : 1)
         // console.log(myresults);
