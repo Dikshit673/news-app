@@ -10,7 +10,7 @@ const fetchData = createAsyncThunk("fetchData", async ({ page, pageSize, query, 
         // console.log(!query);
         const data = await fetch(apiUrl);
         const res = await data.json();
-        // console.log("fetchData", res);
+        console.log("fetchData", res);
         return res;
     } catch (error) {
         return error;
