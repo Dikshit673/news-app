@@ -20,7 +20,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />}></Route>
           <Route exact path="/about" element={<AboutPage />}></Route>
-          <Route exact path="/Favourites" element={<FavouritesPage />}></Route>
+          <Route exact path="/favourites" element={<FavouritesPage />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
         <FooterCom />

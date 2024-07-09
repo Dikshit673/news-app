@@ -1,9 +1,20 @@
 import { createSlice, current } from '@reduxjs/toolkit'
 
+const getItemFromLocalStorage = () => {
+    let news = localStorage.getItem("favouriteNews")
+
+    if (news) {
+        return JSON.parse(news);
+    }
+    else {
+        return [];
+    }
+}
+
 const favouriteNewsSlice = createSlice({
     name: 'FavouriteNews',
     initialState: {
-        myFavouriteNews: JSON.parse(localStorage.getItem('favouriteNews')),
+        myFavouriteNews: getItemFromLocalStorage(),
         favTotalPage: 1,
         favCurrentPage: 1,
         favPageSize: 6,
@@ -16,15 +27,11 @@ const favouriteNewsSlice = createSlice({
             if (!news) {
                 current(state.myFavouriteNews)
                 state.myFavouriteNews = [...state.myFavouriteNews, action.payload]
-                let newsData = JSON.stringify(state.myFavouriteNews)
-                localStorage.setItem('favouriteNews', newsData)
             }
         },
         deleteNewsFunction: (state, action) => {
             current(state.myFavouriteNews)
             state.myFavouriteNews = state.myFavouriteNews.filter(item => item.url !== action.payload);
-            let newsData = JSON.stringify(state.myFavouriteNews)
-            localStorage.setItem('favouriteNews', newsData)
         },
         favPageSizeChangeFunction: (state, action) => {
             state.favPageSize = Number(action.payload);

@@ -82,7 +82,7 @@ a {
 
 .dropdown-menu,
 .dropdown-toggle {
-  z-index: 10;
+  z-index: 90;
 }
 
 .dropdown-toggle {

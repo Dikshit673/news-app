@@ -45,8 +45,8 @@ const NavbarCom = () => {
                                 setState(false)
                                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" })
                             }}>
-                                <NavLink className='nav-link' to='favourites'>
-                                    <i className="fa-solid fa-list me-1 icons_anim" />favorites
+                                <NavLink className='nav-link' to='/favourites'>
+                                    <i className="fa-solid fa-list me-1 icons_anim" />Favorites
                                 </NavLink>
                             </li>
                         </ul>

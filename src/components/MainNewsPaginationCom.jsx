@@ -16,9 +16,7 @@ const MainNewsPaginationCom = () => {
         let myresults = (apiData.myNewsApiData?.totalResults ? (Math.ceil(apiData.myNewsApiData.totalResults / pageDetail.myPageSize)) : 1)
         // console.log(myresults);
         // console.log(apiData.myNewsApiData);
-        if (myresults) {
-            dispatch(totalPageFunction(myresults));  // initially dispatching the first page data when the component mounts
-        }
+        dispatch(totalPageFunction(myresults));  // initially dispatching the first page data when the component mounts
     }, [apiData.myNewsApiData, pageDetail.myPageSize])
 
     const { myTotalPage, myCurrentPage, myPageSize, mySiblings } = pageDetail;

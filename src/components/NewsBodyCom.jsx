@@ -21,7 +21,7 @@ const NewsBodyCom = () => {
 
 
     return (
-        <section>
+        <section className=' min-vh-100'>
             <div className="container">
                 <h2 className=' text-capitalize text-black my-4 '>top headlines</h2>
 

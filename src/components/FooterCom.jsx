@@ -37,7 +37,7 @@ const FooterCom = () => {
                     <div className="col-12 col-lg-4 mb-3">
                         <h3>Newsletter</h3>
                         <div>
-                            <input type="text" placeholder='Email' />
+                            <input type="text" name='email-subs' id='email-subscribe' placeholder='Email' />
                             <button className='btn-primary'>Subscribe</button>
                         </div>
                     </div>

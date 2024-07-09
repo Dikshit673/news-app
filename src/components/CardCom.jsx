@@ -30,7 +30,7 @@ const CardCom = ({ currData, functionality }) => {
                         <img src={currData.urlToImage ? currData.urlToImage : newsPng} alt='Image Not Found' className='card-div-img' />
                     </div>
                     <div className='card-div-body'>
-                        <h5 className='card-div-heading'>{currData.title ? currData.title.slice(0, 90) : "Not Found"}{(currData.title && currData.title.length < 90) ? "" : "..."}</h5>
+                        <h5 className='card-div-heading'>{currData.title ? currData.title.slice(0, 90) : "Not Found"}{(currData.title && currData.title?.length < 90) ? "" : "..."}</h5>
                         <p className="card-div-para">{currData.description ? currData.description.slice(0, 150) : "Not Found"}{(currData.description && currData.description.length < 150) ? "" : "..."}</p>
                         <button className='btn btn-primary'>Read More...</button>
                         <div className=' d-flex flex-column align-items-end pt-2'>

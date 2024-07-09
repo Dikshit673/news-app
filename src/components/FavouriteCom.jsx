@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CardCom from './CardCom'
 import { useDispatch, useSelector } from 'react-redux'
 import { favPageSizeChangeFunction } from '../myRedux/slices/FavouriteNewsSlicer'
@@ -9,14 +9,20 @@ const FavouriteCom = () => {
     const { myFavouriteNews, favCurrentPage, favPageSize } = favouritesObj;
 
     // make a new array with some element upto page size
-    let favNewsArray = myFavouriteNews.filter((currData, ind) => {
+    let favNewsArray = myFavouriteNews?.filter((currData, ind) => {
         return (ind >= (favCurrentPage - 1) * favPageSize && ind < favCurrentPage * favPageSize)
     })
     // console.log(favNewsArray);
+    // console.log(favouritesObj);
     const newsPageSizeChange = (e) => {
         // console.log(e.target.value);
         dispatch(favPageSizeChangeFunction(e.target.value));
     }
+
+    useEffect(() => {
+        let newsData = JSON.stringify(favouritesObj)
+        localStorage.setItem('favouriteNews', newsData)
+    }, [favouritesObj])
 
     return (
         <section>
@@ -32,7 +38,7 @@ const FavouriteCom = () => {
                     </select>
                 </div>
                 <div className="row">
-                    {favNewsArray.map((currData, ind) => {
+                    {favNewsArray?.map((currData, ind) => {
                         return (
                             <CardCom
                                 key={ind}
