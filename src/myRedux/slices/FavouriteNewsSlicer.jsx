@@ -22,8 +22,11 @@ const favouriteNewsSlice = createSlice({
     },
     reducers: {
         favNewsFunction: (state, action) => {
-            let news = state.favNewsApiArray.find((item) => item.url === action.payload.url)
-            console.log(news);
+            // console.log(action.payload)
+            let news = state.favNewsApiArray.some((item) => {
+                return item.url === action.payload.url
+            })
+            // console.log(news);
             if (!news) {
                 current(state.favNewsApiArray)
                 state.favNewsApiArray.push(action.payload)
