@@ -7,15 +7,9 @@ export default defineConfig({
   // server: {
   //   proxy: {
   //     '/api': {
-  //       target: 'https://newsapi.org',
+  //       target: 'https://persist-news-server.vercel.app/',
   //       changeOrigin: true,
   //       rewrite: (path) => path.replace(/^\/api/, ''),
-  //       configure: (proxy, options) => {
-  //         proxy.on('proxyReq', (proxyReq, req, res) => {
-  //           // Add the API key to the request headers
-  //           proxyReq.setHeader('Authorization', `Bearer ${process.env.YOUR_NEWS_API_KEY}`);
-  //         });
-  //       }
   //     }
   //   },
   // }
