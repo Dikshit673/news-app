@@ -14,7 +14,7 @@ const getItemFromLocalStorage = () => {
 const favouriteNewsSlice = createSlice({
     name: 'FavouriteNews',
     initialState: {
-        myFavouriteNews: getItemFromLocalStorage(),
+        favNewsApiArray: getItemFromLocalStorage(),
         favTotalPage: 1,
         favCurrentPage: 1,
         favPageSize: 6,
@@ -22,16 +22,16 @@ const favouriteNewsSlice = createSlice({
     },
     reducers: {
         favNewsFunction: (state, action) => {
-            let news = state.myFavouriteNews.find((item) => item.url === action.payload.url)
-            // console.log(news);
+            let news = state.favNewsApiArray.find((item) => item.url === action.payload.url)
+            console.log(news);
             if (!news) {
-                current(state.myFavouriteNews)
-                state.myFavouriteNews = [...state.myFavouriteNews, action.payload]
+                current(state.favNewsApiArray)
+                state.favNewsApiArray.push(action.payload)
             }
         },
         deleteNewsFunction: (state, action) => {
-            current(state.myFavouriteNews)
-            state.myFavouriteNews = state.myFavouriteNews.filter(item => item.url !== action.payload);
+            current(state.favNewsApiArray)
+            state.favNewsApiArray = state.favNewsApiArray.filter(item => item.url !== action.payload);
         },
         favPageSizeChangeFunction: (state, action) => {
             state.favPageSize = Number(action.payload);

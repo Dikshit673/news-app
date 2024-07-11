@@ -6,23 +6,26 @@ import { favPageSizeChangeFunction } from '../myRedux/slices/FavouriteNewsSlicer
 const FavouriteCom = () => {
     const dispatch = useDispatch();
     const favouritesObj = useSelector(state => state.favouriteNewsData)
-    const { myFavouriteNews, favCurrentPage, favPageSize } = favouritesObj;
+    const { favNewsApiArray, favCurrentPage, favPageSize } = favouritesObj;
+
+    // console.log(favNewsArray);
+    // console.log('favNewsApiArray', favNewsApiArray);
+    // console.log(favouritesObj);
 
     // make a new array with some element upto page size
-    let favNewsArray = myFavouriteNews?.filter((currData, ind) => {
+    let favNewsArray = favNewsApiArray?.filter((currData, ind) => {
         return (ind >= (favCurrentPage - 1) * favPageSize && ind < favCurrentPage * favPageSize)
     })
-    // console.log(favNewsArray);
-    // console.log(favouritesObj);
+
     const newsPageSizeChange = (e) => {
         // console.log(e.target.value);
         dispatch(favPageSizeChangeFunction(e.target.value));
     }
 
     useEffect(() => {
-        let newsData = JSON.stringify(favouritesObj)
+        let newsData = JSON.stringify(favNewsApiArray)
         localStorage.setItem('favouriteNews', newsData)
-    }, [favouritesObj])
+    }, [favNewsApiArray])
 
     return (
         <section>

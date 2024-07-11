@@ -20,14 +20,14 @@ const FavNewsPaginationCom = () => {
 
   // console.log(favNewsObj1);
 
-  const { myFavouriteNews, favTotalPage, favCurrentPage, favPageSize, favSiblings } = favNewsObj
+  const { favNewsApiArray, favTotalPage, favCurrentPage, favPageSize, favSiblings } = favNewsObj
   // console.log(myArrayRange);
   // console.log(favTotalPage, favCurrentPage, favPageSize, favSiblings);
 
   useEffect(() => {
-    let myresults = (myFavouriteNews?.length ? (Math.ceil(myFavouriteNews?.length / favPageSize)) : 1)
+    let myresults = (favNewsApiArray?.length ? (Math.ceil(favNewsApiArray?.length / favPageSize)) : 1)
     dispatch(favTotalPageCalculFunction(myresults))
-  }, [myFavouriteNews, favPageSize]);
+  }, [favNewsApiArray, favPageSize]);
 
   useEffect(() => {
     let paginationArray = PaginationRange(favTotalPage, favCurrentPage, favPageSize, favSiblings);
