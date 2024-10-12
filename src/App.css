@@ -22,6 +22,10 @@ a {
   z-index: 99;
 }
 
+.nav-section .nav-brand-name {
+  font-size: 1.5rem;
+}
+
 .nav-item {
   text-transform: capitalize;
   cursor: pointer;
@@ -41,7 +45,8 @@ a {
 
 /* -----------hero---------------- */
 .showcase {
-  background: url('https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg') no-repeat center/cover;
+  background: url("https://images.pexels.com/photos/177557/pexels-photo-177557.jpeg")
+    no-repeat center/cover;
   height: 400px;
 }
 
@@ -192,7 +197,6 @@ a {
   border-radius: 2px;
   margin: 2px;
   padding: 0 12px;
-
 }
 
 .footer-section button {
@@ -213,7 +217,7 @@ a {
   cursor: pointer;
 }
 
-@media (max-width:992px) {
+@media (max-width: 992px) {
   .navbar-toggler {
     outline: none;
     border: 2px solid #fff;
@@ -228,7 +232,7 @@ a {
   }
 }
 
-@media(max-width:576px) {
+@media (max-width: 576px) {
   .showcase {
     height: 250px;
   }
