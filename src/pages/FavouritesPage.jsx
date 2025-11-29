@@ -1,4 +1,4 @@
-import React from 'react'
+
 import FavouriteCom from '../components/FavouriteCom'
 import FavNewsPaginationCom from '../components/FavNewsPaginationCom'
 

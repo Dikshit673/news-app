@@ -1,4 +1,4 @@
-import React from 'react'
+
 import HeroCom from '../components/HeroCom'
 import NewsBodyCom from '../components/NewsBodyCom'
 // import PaginationCom from '../components/PaginationCom'

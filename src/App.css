@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 section {
   height: auto;
   overflow: hidden;
@@ -107,6 +111,16 @@ a {
   overflow-wrap: anywhere;
 }
 
+.card-div a {
+  cursor: default;
+}
+
+.card-div .card-div-body .card-div-heading span,
+.card-div .card-div-body .card-div-para span,
+.card-div .card-div-body .author-published span {
+  cursor: text;
+}
+
 .star-div {
   position: absolute;
   top: 2px;
@@ -117,6 +131,7 @@ a {
   justify-content: center;
   align-items: flex-end;
   border-radius: 2px;
+  cursor: pointer;
   /* background-color: rgba(255, 255, 255, 0.7); */
 }
 
