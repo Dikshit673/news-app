@@ -22,21 +22,20 @@ const NewsSection=()=>{
 
   if(isLoading)return <LoaderCom/>
 
-  if(newsApiData && newsApiData.articles && newsApiData.articles.length === 0)return <NoNews/>
+  if( newsApiData?.articles?.length === 0)return <NoNews/>
 
   return(
     <>
-      {newsApiData && newsApiData.articles && 
-        newsApiData.articles.map((news, index) => {
-          return (
-            <CardCom key={index} currData={news} functionality="save" />
-          );
-        })}
+      {newsApiData?.articles?.map((news, index) => {
+        return (
+          <CardCom key={index} currData={news} functionality="save" />
+        );
+      })}
     </>
   )
 }
 
-const CategoryDropdownList=({isDropdown,setIsDropdown})=>{
+const DropdownList=({isDropdown,setIsDropdown})=>{
   const dispatch = useDispatch();
 
   const handleListClick=(category)=>{
@@ -62,7 +61,7 @@ const CategoryDropdownList=({isDropdown,setIsDropdown})=>{
   )
 }
 
-CategoryDropdownList.propTypes={
+DropdownList.propTypes={
   isDropdown:PropTypes.bool.isRequired,
   setIsDropdown:PropTypes.func.isRequired
 }
@@ -81,7 +80,7 @@ const CategoryDropdown=()=>{
       >
         {myCategoryData}
       </button>
-      <CategoryDropdown 
+      <DropdownList 
         isDropdown={isDropdown} 
         setIsDropdown={setIsDropdown}
       />
