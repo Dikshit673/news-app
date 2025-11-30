@@ -13,7 +13,7 @@ const createApiUrl = (
   category: string,
   country: string
 ) => {
-  const baseUrl = String(import.meta.env.VITE_BACKEND_URL);
+  const baseUrl = String(import.meta.env.VITE_API_URL);
 
   const params = new URLSearchParams();
 
