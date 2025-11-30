@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/useRedux';
 
-import CategoryArr from '@/constants/CategoryArr';
+import CategoryArr, { type CategoryType } from '@/constants/CategoryArr';
 import { setCategory, setCurrentPage } from '../slices/newsAPiSlice';
 
 type DropDownListProps = {
@@ -27,7 +27,7 @@ export const CategoryDropdown = () => {
   const { category } = useAppSelector((state) => state.news);
   const [isDropdown, setIsDropdown] = useState(false);
 
-  const handleCategoryClick = (category: string) => {
+  const handleCategoryClick = (category: CategoryType) => {
     setIsDropdown(false);
     dispatch(setCurrentPage(1));
     dispatch(setCategory(category));
@@ -50,7 +50,7 @@ export const CategoryDropdown = () => {
             <CategoryItem
               key={index}
               category={category}
-              handleCategoryClick={handleCategoryClick}
+              handleCategoryClick={() => handleCategoryClick(category)}
             />
           );
         })}
