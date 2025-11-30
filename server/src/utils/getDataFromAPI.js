@@ -1,11 +1,10 @@
-const axios = require("axios");
-const { getParams } = require("./getParams");
+const axios = require('axios');
+const { getParams } = require('./getParams');
 
-const getDataFromAPI = async (query, category, page, pageSize,country) => {
-  const parameter = getParams(query, category, page, pageSize,country);
+const getDataFromAPI = async (query, category, page, pageSize, country) => {
+  const parameter = getParams(query, category, page, pageSize, country);
   try {
-    console.log(parameter);
-    const response = await axios.get("https://newsapi.org/v2/top-headlines", {
+    const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: parameter,
     });
     const result = response.data;

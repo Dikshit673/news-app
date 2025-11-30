@@ -51,14 +51,12 @@ app.get('/news', async (req, res) => {
 
   try {
     const data = await getDataFromAPI(query, category, page, pageSize, country);
-    console.log('try');
     res.status(200).json({
       success: true,
       messsage: 'News fetched successfully',
       ...data,
     });
   } catch (error) {
-    console.log('catch');
     res.status(500).json({
       success: false,
       messsage: 'Error in fetching news',
